@@ -81,10 +81,7 @@ export default function NamingApp() {
         value={answers[currentStep]}
         onChange={e => setAnswers(prev => ({ ...prev, [currentStep]: e.target.value }))}
         onKeyDown={e => {
-          if (e.key === 'Enter') {
-            const value = e.target.value.trim();
-            if (value !== '') handleChange(value);
-          }
+          if (e.key === 'Enter') handleChange(answers[currentStep]);
         }}
       />
     );
