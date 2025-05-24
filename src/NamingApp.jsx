@@ -79,9 +79,16 @@ export default function NamingApp() {
         className="w-full border p-2"
         placeholder={prompts[currentStep]}
         value={answers[currentStep]}
-        onChange={e => setAnswers(prev => ({ ...prev, [currentStep]: e.target.value }))}
+        onChange={e => {
+          console.log("onChange:", e.target.value);
+          setAnswers(prev => ({ ...prev, [currentStep]: e.target.value }));
+        }}
         onKeyDown={e => {
-          if (e.key === 'Enter') handleChange(answers[currentStep]);
+          console.log("Key pressed:", e.key);
+          if (e.key === 'Enter') {
+            console.log("Calling handleChange with:", answers[currentStep]);
+            handleChange(answers[currentStep]);
+          }
         }}
       />
     );
