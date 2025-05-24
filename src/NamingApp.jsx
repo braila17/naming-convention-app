@@ -80,12 +80,11 @@ export default function NamingApp() {
         placeholder={prompts[currentStep]}
         value={answers[currentStep]}
         onChange={e => setAnswers(prev => ({ ...prev, [currentStep]: e.target.value }))}
-        onBlur={e => {
-          const value = e.target.value;
-          if (value.trim() !== '') handleChange(value);
-        }}
         onKeyDown={e => {
-          if (e.key === 'Enter') handleChange(answers[currentStep]);
+          if (e.key === 'Enter') {
+            const value = e.target.value.trim();
+            if (value !== '') handleChange(value);
+          }
         }}
       />
     );
