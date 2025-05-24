@@ -95,7 +95,24 @@ export default function NamingApp() {
       ) : (
         <div className="bg-gray-100 p-4 rounded">
           <p className="text-sm text-gray-500">Generated Filename:</p>
-          <p className="font-mono text-blue-600 break-words">{generateFilename()}</p>
+          -     <p className="font-mono text-blue-600 break-words">{generateFilename()}</p>
++     <div className="flex space-x-2">
++       <input
++         readOnly
++         className="flex-1 font-mono border p-2 bg-white"
++         value={generateFilename()}
++       />
++       <button
++         onClick={() => {
++           navigator.clipboard.writeText(generateFilename());
++           alert('Copied to clipboard!');
++         }}
++         className="bg-blue-500 text-white px-3 py-2 rounded"
++       >
++         Copy
++       </button>
++     </div>
+
         </div>
       )}
     </div>
