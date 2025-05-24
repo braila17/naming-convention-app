@@ -1,0 +1,18 @@
+{
+  "projects": ["VN2740", "VN3451"],
+  "formTypes": [
+    { "code": "DR", "name": "Drawing" },
+    { "code": "IT", "name": "Inspection Test Plan" },
+    { "code": "MS", "name": "Method Statement" }
+  ],
+  "disciplines": [
+    { "code": "EP", "name": "Electrical Power" },
+    { "code": "MG", "name": "Mechanical General" },
+    { "code": "HS", "name": "Health & Safety" }
+  ],
+  "spatialZones": [
+    { "code": "BU1-L1", "name": "Building 1 - Level 1" },
+    { "code": "BU2-RF", "name": "Building 2 - Rooftop" },
+    { "code": "BU3-M1", "name": "Building 3 - Mezzanine 1" }
+  ]
+}
